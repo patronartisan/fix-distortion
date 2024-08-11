@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fix Distortion</title>
+</head>
+
+<body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <h1>Image Upload</h1>
+    <input type="file" id="imageInput" accept="image/*">
+    <canvas id="outputCanvas"></canvas>
+
+    <script type="module">
+        import FD from './../src/index.js';
+        const imageInput = document.getElementById('imageInput');
+        imageInput.addEventListener('change', (event) => {
+            console.log('HAS CHANGE')
+            FD.convert(event).show()
+        });
+    </script>
+</body>
+
+</html>
